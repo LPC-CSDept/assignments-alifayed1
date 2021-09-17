@@ -38,6 +38,9 @@ int main() {
   for(int i = 0; i < 10; i++) {
     ostream.write((char*)&student, sizeof(student));
   }
+  
+  // Need more implementation to read all student's information
+	// Make a function to find the Students information
 
   return 0;
 }
