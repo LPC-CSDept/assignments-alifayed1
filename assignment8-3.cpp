@@ -44,4 +44,4 @@ void printArray(int a[], int x)
     cout << a[i] << "\t";
   }
   cout << "\n";
-}
+  }
