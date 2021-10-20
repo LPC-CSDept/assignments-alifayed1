@@ -35,6 +35,6 @@ int main() {
   }
   cout << "\n";
 
-  ofs.write((char*)&s, sizeof(s));
+  ofs.write((char*)&(*s), sizeof(*s));
   return 0;
 }

@@ -16,25 +16,25 @@ int main() {
   Student* s = new Student;
 
   ifstream ifs;
-  ofstream ofs;
+  ifs.open("Quiz2-1/students.bin");
 
-  ifs.open("Quiz2-1/students.txt");
-  ofs.open("Quiz2-1/students.bin");
-
-  if(ifs.fail()) {
-    cerr << "Failed to read students.txt" << endl;
-  }
-  ifs >> (s)->sid >> (s)->sname;
-  for(int j=0; j<NUM_SCORES; j++) {
-      ifs >> (s)->scores[j] ;
+  if (ifs.fail()) {
+    cerr << "Failed to open students.bin\n";
+    exit(0);
   }
 
-  cout << s->sid << " " << s->sname << " ";
-  for(int i = 0; i < NUM_SCORES; i++) {
-    cout << s->scores[i] << " ";
-  }
-  cout << "\n";
+  ifs.read((char*)&(*s), sizeof(*s));
 
-  ofs.write((char*)&s, sizeof(s));
+  double avg = (s->scores[0] + s->scores[1] + s->scores[2]) / NUM_SCORES;
+  if(avg > 85) {
+    cout << "\tScore is greater than 85, printing student's information...\n";
+    cout << "ID: " << s->sid << endl;
+    cout << "Name: " << s->sname << endl;
+    cout << "Scores: ";
+    for(int i = 0; i < NUM_SCORES; i++) {
+      cout << s->scores[i] << " ";
+    }
+    cout << "\n";
+  }
   return 0;
 }
