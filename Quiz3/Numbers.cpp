@@ -8,8 +8,6 @@ Numbers::Numbers() {
 }
 
 Numbers::Numbers(int setID, int size) {
-  srand(time(0));
-
   id = setID;
   numbers.reserve(size);
 
@@ -46,11 +44,28 @@ int Numbers::getMax() const {
   } else if(numbers.size() == 1) {
     return numbers[0];
   } else {
-    int max = 0;
+    int max = numbers[0];
     for(int i = 0; i < numbers.size() - 1; i++) {
       int current = numbers[i];
       if(current > max) {
         max = current;
+      }
+    }
+  }
+}
+
+int Numbers::getMin() const {
+  if(numbers.size() == 0) {
+    cout << "Error: No numbers to fetch\n";
+    throw -1;
+  } else if(numbers.size() == 1) {
+    return numbers[0];
+  } else {
+    int min = numbers[0];
+    for(int i = 0; i < numbers.size() - 1; i++) {
+      int current = numbers[i];
+      if(current < min) {
+        min = current;
       }
     }
   }
@@ -72,7 +87,7 @@ int Numbers::getSum() const {
 }
 
 void Numbers::deleteElm(int values) {
-  
+  numbers.erase(numbers.begin() + values);
 }
 
 void Numbers::addElm(int num) {

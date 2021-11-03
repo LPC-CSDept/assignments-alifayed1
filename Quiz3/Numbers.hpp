@@ -1,8 +1,6 @@
 #ifndef NUMBERS_H
 #define NUMBERS_H
 
-#include <cstdlib>
-#include <ctime>
 #include <vector>
 #include <iostream>
 
@@ -22,8 +20,11 @@ class Numbers {
     int getSize() const;
     int getElm(int) const;
     int getMax() const;
+    int getMin() const;
     int getSum() const;
     void deleteElm(int);
     void addElm(int);
     void printAll() const;
-}
+};
+
+#endif
