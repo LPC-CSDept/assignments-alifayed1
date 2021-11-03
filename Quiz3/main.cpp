@@ -1,4 +1,5 @@
-#include "Numbers.hpp"
+#include "Numbers.cpp"
+
 #include <cstdlib>
 #include <ctime>
 
@@ -8,7 +9,8 @@ int findMax(Numbers[], int);
 void deDup(Numbers &, Numbers &);
 
 int main() {
-  Numbers number;
+  Numbers num(1, 5);
+  num.printAll();
   // const int N = 5;
   // srand(time(0));
   // Numbers numberset[] = {Numbers(1, 5), Numbers(2, 5), Numbers(3, 10), Numbers(4, 5), Numbers(5, 7)};
@@ -34,4 +36,25 @@ int main() {
   // cout << "ID 1 - ID 2\n";
 
   // numberset[0].printAll();
+}
+
+int findMax(Numbers nums[], int size) {
+  if(size > 5) {
+    cout << "Error: Size is too large\n";
+  } else {
+    int max = -1;
+    int largestId = -1;
+    for(int i = 0; i < size; i++) {
+      int currMax = nums[i].getMax();
+      if(currMax > max) {
+        max = currMax;
+        largestId = nums[i].getID();
+      }
+    }
+    return largestId;
+  }
+}
+
+void deDup(Numbers& firstSet, Numbers& secondSet) {
+  
 }

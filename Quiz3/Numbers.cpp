@@ -11,7 +11,7 @@ Numbers::Numbers(int setID, int size) {
   id = setID;
   numbers.reserve(size);
 
-  for(int i = 0; i < size; i++) {
+  for(int i = 0; i <= size; i++) {
     numbers.push_back((rand() % 99));
   }
 }
@@ -51,6 +51,7 @@ int Numbers::getMax() const {
         max = current;
       }
     }
+    return max;
   }
 }
 
@@ -68,6 +69,7 @@ int Numbers::getMin() const {
         min = current;
       }
     }
+    return min;
   }
 }
 
