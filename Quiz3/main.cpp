@@ -76,8 +76,7 @@ int findMax(Numbers nums[], int size) {
 }
 
 void deDup(Numbers& firstSet, Numbers& secondSet) {
-  cout << secondSet.getSize() << endl;
-  // for(int i = 0; i < secondSet.getSize()-1; i++) {
-  //   firstSet.deleteElm(secondSet.getElm(i));
-  // }
+  for(int i = 0; i < secondSet.getSize()-1; i++) {
+    // firstSet.deleteElm(secondSet.getElm(i));
+  }
 }

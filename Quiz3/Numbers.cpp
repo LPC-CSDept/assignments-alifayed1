@@ -11,7 +11,7 @@ Numbers::Numbers(int setID, int size) {
   id = setID;
   numbers.reserve(size);
 
-  for(int i = 0; i <= size; i++) {
+  for(int i = 0; i < size; i++) {
     numbers.push_back((rand() % 99));
   }
 }
@@ -89,7 +89,7 @@ int Numbers::getSum() const {
 }
 
 void Numbers::deleteElm(int values) {
-  numbers.erase(numbers.begin() + values);
+  
 }
 
 void Numbers::addElm(int num) {
