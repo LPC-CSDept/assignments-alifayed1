@@ -27,8 +27,9 @@ int main() {
   cout << "The diff is " << numberset[id-1].getMax() - numberset[id-1].getMin() << endl;
 
   deDup(numberset[2], numberset[3]);
-  cout << "ID 3 - ID 4\n ";
-  // numberset[2].printAll();
+  cout << "ID 3 - ID 4\n";
+  cout << "ID 3 :\t";
+  numberset[2].printAll();
 
   // const int N = 5;
   // srand(time(0));
@@ -77,6 +78,6 @@ int findMax(Numbers nums[], int size) {
 
 void deDup(Numbers& firstSet, Numbers& secondSet) {
   for(int i = 0; i < secondSet.getSize()-1; i++) {
-    // firstSet.deleteElm(secondSet.getElm(i));
+    firstSet.deleteElm(secondSet.getElm(i));
   }
 }

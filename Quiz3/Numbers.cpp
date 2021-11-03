@@ -88,8 +88,13 @@ int Numbers::getSum() const {
   }
 }
 
-void Numbers::deleteElm(int values) {
-  
+void Numbers::deleteElm(int value) {
+  vector<int>::iterator iter;
+  for(iter = numbers.begin(); iter < numbers.end(); iter++) {
+    if(*iter == value) {
+      numbers.erase(iter--);
+    }
+  }
 }
 
 void Numbers::addElm(int num) {
