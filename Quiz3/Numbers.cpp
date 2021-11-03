@@ -12,7 +12,7 @@ Numbers::Numbers(int setID, int size) {
   numbers.reserve(size);
 
   for(int i = 0; i < size; i++) {
-    numbers.push_back((rand() % 99));
+    numbers.push_back((rand() % 20));
   }
 }
 
