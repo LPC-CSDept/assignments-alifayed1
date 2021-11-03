@@ -9,15 +9,23 @@ int findMax(Numbers[], int);
 void deDup(Numbers &, Numbers &);
 
 int main() {
-  Numbers num(1, 5);
-  num.printAll();
+  Numbers num1(1, 3);
+  Numbers num2(2, 4);
+  Numbers num3(3, 8);
+  Numbers num4(4, 6);
+
+  num1.printAll();
+  num2.printAll();
+  num3.printAll();
+  num4.printAll();
+  
   // const int N = 5;
   // srand(time(0));
   // Numbers numberset[] = {Numbers(1, 5), Numbers(2, 5), Numbers(3, 10), Numbers(4, 5), Numbers(5, 7)};
 
   // for (int i = 0; i < N; i++)
   // {
-  //   cout << "Number Set ID " << numberset[i].getID() << "\t";
+  //   cout << "Number Set ID " << numberset[i].getID() << "\t\n";
   //   numberset[i].printAll();
   // }
 
@@ -41,11 +49,12 @@ int main() {
 int findMax(Numbers nums[], int size) {
   if(size > 5) {
     cout << "Error: Size is too large\n";
+    throw -1;
   } else {
     int max = -1;
     int largestId = -1;
     for(int i = 0; i < size; i++) {
-      int currMax = nums[i].getMax();
+      int currMax = nums[i].getMax() - nums[i].getMin();
       if(currMax > max) {
         max = currMax;
         largestId = nums[i].getID();
@@ -56,5 +65,7 @@ int findMax(Numbers nums[], int size) {
 }
 
 void deDup(Numbers& firstSet, Numbers& secondSet) {
-  
+  for(int i = 0; i < secondSet.getSize()-1; i++) {
+    firstSet.deleteElm(secondSet.getElm(i));
+  }
 }
