@@ -28,7 +28,7 @@ int main() {
 
     int course_id;
 
-    for(int j = 0; j < 4; j++) {
+    for(int j = 0; j < Course::getNumCourses(); j++) {
       if(cname == courses[j].getCName()) {
         course_id = j;
         for (int k = 0; k < count; k++) {
@@ -44,6 +44,11 @@ int main() {
         cout << courses[course_id] << endl;
       }
     }
+  }
+
+  cout << "*** PRINTING ALL COURSES ***\n\n";
+  for(int i = 0; i < Course::getNumCourses(); i++) {
+    cout << courses[i];
   } 
   return 0;
 }
