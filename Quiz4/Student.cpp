@@ -16,10 +16,6 @@ Student::Student(int setId, string setName, char setGrade, double setScores) {
   scores = setScores;
 }
 
-Student::~Student() {
-
-}
-
 int Student::getID() const {
     return id;
 }

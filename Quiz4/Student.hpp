@@ -15,7 +15,6 @@ class Student {
   public:
     Student();
     Student(int, string, char, double);
-    ~Student();
 
     int getID() const;
     string getName() const;
