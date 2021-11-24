@@ -16,16 +16,34 @@ int main() {
     cout << courses[i] << endl;
   }
 
-  ifs.open("addstudents.txt");
-  while (/*for all courses*/) {
-    course_id = Find the course id to add the student
-    for (/*all students in the course*/) {
-      read each student information  and cook the Struct student
-      s.setStudent(id, sname, grade, sc);
-      courses[course_id].addStudent(s);
+  ifs.close();
+
+  ifs.open("Quiz4/addstudents.txt");
+  for(int i = 0; i < 2; i++) {
+    string cname;
+    int count;
+
+    ifs >> cname;
+    ifs >> count;
+
+    int course_id;
+
+    for(int j = 0; j < 4; j++) {
+      if(cname == courses[j].getCName()) {
+        course_id = j;
+        for (int k = 0; k < count; k++) {
+          int id;
+          string name;
+          char grade;
+          double scores;
+          ifs >> id >> name >> grade >> scores;
+          Student s(id, name, grade, scores);
+          courses[course_id].addStudent(s);
+        }
+        cout << "Updated Students list for the Course " << cname << endl;
+        cout << courses[course_id] << endl;
       }
-      cout << "Updated Students list for the Course " << cname << endl;
-      cout << courses[course_id] << endl;
+    }
   } 
   return 0;
 }
