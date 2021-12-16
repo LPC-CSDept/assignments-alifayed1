@@ -3,6 +3,10 @@
 using namespace std;
 
 ProductionWorker::ProductionWorker() {
+    this->name = "";
+    this->number = 0;
+    this->hireDate = "";
+
     shift = 0;
     hourlyWage = 0.0;
 }
@@ -66,6 +70,6 @@ ostream& operator << (ostream& os, ProductionWorker& worker) {
     os << "Number: " << worker.getNumber() << endl;
     os << "Hire Date: " << worker.getHireDate() << endl;
     os << "Shift: " << (worker.getShift() == 1 ? "Day" : "Night") << endl;
-    os << "Name: " << worker.getName() << endl;
+    os << "Hourly Wage: " << worker.getHourlyWage() << endl << endl;
     return os;
 }
