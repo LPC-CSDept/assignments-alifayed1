@@ -5,19 +5,42 @@
 
 using namespace std;
 
-void quicksort(Course[], int, int);
+void swap(int, int);
+void quicksort(int, int);
+void fillCourseArray(int);
+void printCourses(int);
+
+const int SIZE = 10;
+Course courses[SIZE];
 
 int main() {
-    
+    srand(time(0));
+
+    fillCourseArray(SIZE);
+
+    cout << "Before Sort: \n\n";
+    printCourses(SIZE);
+
+    quicksort(0, SIZE);
+
+    cout << "After Sort: \n\n";
+    printCourses(SIZE);
+
     return 0;
 }
 
-void quicksort(Course courses[], int left, int right) {
-    if(left >= right) {
-        return;
+void swap(int i, int j) {
+    Course temp = courses[i];
+    courses[i] = courses[j];
+    courses[j] = temp;
+}
+
+void quicksort(int left, int right) {
+   if(left >= right) {
+    	return;
     }
 
-    int pivot = left + (right - left) / 2; // Safe way to calculate mid to prevent overflow
+    int pivot = left + (right - left) / 2;
     swap(pivot, right);
 
     int x = left - 1;
@@ -35,7 +58,30 @@ void quicksort(Course courses[], int left, int right) {
 
     swap(right, y);
 
-    quicksort(courses, left, y - 1);
-    quicksort(courses, y + 1, right);
+    quicksort(left, y - 1);
+    quicksort(y + 1, right);
 }
 
+void fillCourseArray(int size) {
+    ifstream ifs;
+    ifs.open("C:\\Users\\alifa\\Documents\\CS2 Assignments\\assignments-alifayed1\\Final\\Q1\\courses.txt");
+
+    if (ifs.fail()) {
+        cerr << "Failed to open courses.txt\n";
+        exit(0);
+    }
+
+    for(int i = 0; i < size; i++) {
+        ifs >> courses[i];
+    }
+
+    ifs.close();
+}
+
+void printCourses(int size) {
+    cout << "Index\tID\tName\n\n";
+    for(int i = 0; i < size; i++) {
+        cout << i << "\t" << courses[i].getID() << "\t" << courses[i].getName() << endl;
+    }
+    cout << endl;
+}
