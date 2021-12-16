@@ -2,6 +2,7 @@
 #define COURSE_H
 
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -21,6 +22,9 @@ class Course {
         void setID(int);
         void setName(string);
         void setCredits(int);
+
+        friend istream& operator >> (istream& is, Course& course);
+        friend ostream& operator << (ostream& os, Course& course);
 };
 
 #endif
