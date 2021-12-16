@@ -48,7 +48,8 @@ istream& operator >> (istream& is, Course& course) {
 }
 
 ostream& operator << (ostream& os, Course& course) {
-    os << "Course ID\tCourse Name\tCourse Credits\n";
-    os << course.id << "\t" << course.name << "\t" << course.credits << "\n";
+    os << "Course Name: " << course.name << "\n";
+    os << "Course ID: " << course.id << "\n";
+    os << "Course Credits: " << course.credits << "\n\n";
     return os;
 }
