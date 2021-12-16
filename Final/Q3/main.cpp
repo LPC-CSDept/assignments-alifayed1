@@ -13,6 +13,10 @@ ProductionWorker workers[SIZE];
 int main() {
     fillWorkers(SIZE);
     printWorkers(SIZE);
+
+    ProductionWorker highestRate = findHighestPaidEmployee(workers, SIZE);
+    cout << "Employee with the highest rate:\n\n";
+    cout << highestRate;
     return 0;
 }
 
