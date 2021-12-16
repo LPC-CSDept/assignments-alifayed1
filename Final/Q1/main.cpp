@@ -25,8 +25,13 @@ int main() {
     cout << endl;
 
     int target = rand() % (109 + 1 - 100) + 100;
-    cout << "Locating " << target << "...\n";
+    cout << "Locating " << target << " iteratively...\n";
     int index = binarySearchIterative(courses, size, target);
+    cout << "Found " << target << " at index: " << index << " (" << courses[index].getName() << ")" << endl << endl;
+
+    target = rand() % (109 + 1 - 100) + 100;
+    cout << "Locating " << target << " recursively...\n";
+    index = binarySearchRecursive(courses, 0, size-1, target);
     cout << "Found " << target << " at index: " << index << " (" << courses[index].getName() << ")" << endl;
 
     return 0;
@@ -77,5 +82,16 @@ int binarySearchIterative(Course courses[], int size, int target) {
 }
 
 int binarySearchRecursive(Course courses[], int low, int high, int target) {
-    
+    if(low > high) {
+        return -1;
+    }
+
+    int mid = low + ((high - low) / 2); // Safe way to calculate mid to prevent overflow
+    if(target == courses[mid].getID()) {
+        return mid;
+    } else if (target < courses[mid].getID()) {
+        return binarySearchRecursive(courses, low, mid - 1, target);
+    } else {
+        return binarySearchRecursive(courses, mid + 1, high, target);
+    }
 }
