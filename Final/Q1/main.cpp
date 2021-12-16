@@ -4,27 +4,27 @@
 
 using namespace std;
 
-int fillCourseArray();
+void fillCourseArray(Course*, int);
 
 int main() {
-    fillCourseArray();
+    int size = 10;
+    Course courses[size];
+
+    fillCourseArray(courses, size);
+    
     return 0;
 }
 
-int fillCourseArray() {
-    int size = 10;
-    Course arr[size];
-
+void fillCourseArray(Course* courses, int size) {
     ifstream ifs;
-    ifs.open("Final/Question One/courses.txt");
+    ifs.open("C:\\Users\\alifa\\Documents\\CS2 Assignments\\assignments-alifayed1\\Final\\Q1\\courses.txt");
 
     if (ifs.fail()) {
         cerr << "Failed to open courses.txt\n";
         exit(0);
     }
 
-    for(int i = 0; i < 10; i++) {
-        cout << i << endl;
+    for(int i = 0; i < size; i++) {
+        ifs >> courses[i];
     }
-    return 1;
 }
