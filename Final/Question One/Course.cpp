@@ -1,5 +1,7 @@
 #include "Course.hpp"
 
+using namespace std;
+
 Course::Course(int setID, string setName, int setCredits) {
     id = setID;
     name = setName;
