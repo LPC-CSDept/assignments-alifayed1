@@ -21,7 +21,9 @@ int main() {
     cout << "Before Sort: \n\n";
     printCourses(SIZE);
 
+    cout << "Recursion Call Hierarchy\n\n";
     quicksort(0, SIZE);
+    cout << "\n";
 
     cout << "After Sort: \n\n";
     printCourses(SIZE);
@@ -39,6 +41,8 @@ void quicksort(int left, int right) {
    if(left >= right) {
     	return;
     }
+
+    cout << "quicksort(" << left << ", " << right << ")\n";
 
     int pivot = left + (right - left) / 2;
     swap(pivot, right);
