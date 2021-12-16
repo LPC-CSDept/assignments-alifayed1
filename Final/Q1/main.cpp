@@ -6,6 +6,7 @@
 using namespace std;
 
 void fillCourseArray(Course[], int);
+void sortByID(Course[], int);
 int binarySearch(Course[], int, int);
 
 int main() {
@@ -14,6 +15,7 @@ int main() {
     Course courses[size];
 
     fillCourseArray(courses, size);
+    sortByID(courses, size);
 
     cout << "Index\tID\tName\n\n";
     for(int i = 0; i < size; i++) {
@@ -21,10 +23,10 @@ int main() {
     }
     cout << endl;
 
-    int target = rand() % (109 + 1 - 100) + 100;
-    cout << "Locating " << target << "...\n";
-    int index = binarySearch(courses, size, target);
-    cout << "Found " << target << " at index: " << index << " (" << courses[index].getName() << ")" << endl;
+    // int target = rand() % (109 + 1 - 100) + 100;
+    // cout << "Locating " << target << "...\n";
+    // int index = binarySearch(courses, size, target);
+    // cout << "Found " << target << " at index: " << index << " (" << courses[index].getName() << ")" << endl;
 
     return 0;
 }
@@ -43,6 +45,16 @@ void fillCourseArray(Course courses[], int size) {
     }
 
     ifs.close();
+}
+
+void sortByID(Course courses[], int size) {
+    for (int i = 0; i < size; i++){
+        for (int j = 0; j < size; j++){
+            if (courses[i].getID() < courses[j].getID()){
+                swap(courses[j], courses[i]);
+            }
+        }
+    }
 }
 
 int binarySearch(Course courses[], int size, int target) {
