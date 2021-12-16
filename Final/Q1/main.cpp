@@ -23,10 +23,10 @@ int main() {
     }
     cout << endl;
 
-    // int target = rand() % (109 + 1 - 100) + 100;
-    // cout << "Locating " << target << "...\n";
-    // int index = binarySearch(courses, size, target);
-    // cout << "Found " << target << " at index: " << index << " (" << courses[index].getName() << ")" << endl;
+    int target = rand() % (109 + 1 - 100) + 100;
+    cout << "Locating " << target << "...\n";
+    int index = binarySearch(courses, size, target);
+    cout << "Found " << target << " at index: " << index << " (" << courses[index].getName() << ")" << endl;
 
     return 0;
 }
