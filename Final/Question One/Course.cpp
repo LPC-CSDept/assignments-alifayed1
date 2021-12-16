@@ -2,6 +2,12 @@
 
 using namespace std;
 
+Course::Course() {
+    id = 0;
+    name = "";
+    credits = 0;
+}
+
 Course::Course(int setID, string setName, int setCredits) {
     id = setID;
     name = setName;

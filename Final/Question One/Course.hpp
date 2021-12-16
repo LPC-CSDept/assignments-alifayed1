@@ -12,6 +12,7 @@ class Course {
         string name;
         int credits;
     public:
+        Course();
         Course(int, string, int);
         ~Course();
 
