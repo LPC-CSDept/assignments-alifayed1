@@ -4,13 +4,13 @@ using namespace std;
 
 ProductionWorker::ProductionWorker() {
     shift = 0;
-    hourlyWage = 0;
+    hourlyWage = 0.0;
 }
 
 ProductionWorker::ProductionWorker(string name, int number, string hireDate, int newShift, double newHourlyWage) {
-    setName(name);
-    setNumber(number);
-    setHireDate(hireDate);
+    this->name = name;
+    this->number = number;
+    this->hireDate = hireDate;
 
     shift = newShift;
     hourlyWage = newHourlyWage;
