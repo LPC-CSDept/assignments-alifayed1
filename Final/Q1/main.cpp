@@ -63,6 +63,20 @@ void sortByID(Course courses[], int size) {
     }
 }
 
+/**
+ * Iterative binary search
+ *
+ * After the array is sorted, the function locates the middle value and checks if
+ * it is the target, if not, it splits the array in half based on whether or not
+ * the current value is greater or smaller than the target. The loop continues
+ * until a value is found. If no value is found at the end of the loop, 
+ * -1 is returned.
+ *
+ * @param courses Courses array
+ * @param size Size of the array
+ * @param target Course ID
+ * @return Index of target.
+ */
 int binarySearchIterative(Course courses[], int size, int target) {
     int first, last, mid;
     first = 0;
@@ -81,6 +95,21 @@ int binarySearchIterative(Course courses[], int size, int target) {
     return -1;
 }
 
+/**
+ * Recursive binary search
+ *
+ * After the array is sorted, the function locates the middle value and checks if
+ * it is the target, if not, it splits the array in half based on whether or not
+ * the current value is greater or smaller than the target. The function is then called again
+ * on the new half with the low and high passed in as parameters so the recursive call
+ * knows where to start and end.
+ *
+ * @param courses Courses array
+ * @param low Left hand side index
+ * @param high Right hand size index
+ * @param target Course ID
+ * @return Index of target.
+ */
 int binarySearchRecursive(Course courses[], int low, int high, int target) {
     if(low > high) {
         return -1;
