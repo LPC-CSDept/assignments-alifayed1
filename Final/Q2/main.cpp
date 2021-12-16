@@ -37,6 +37,21 @@ void swap(int i, int j) {
     courses[j] = temp;
 }
 
+/**
+ * Recursive quicksort
+ *
+ * Using the middle point as the pivot, the pivot is swapped with the last element
+ * in the array. Then the algorithm the left hand size of the array is incremented
+ * by one until the value at that index is greater than or equal to the pivot. 
+ * At the same time, the right hand size is decremented until the value at that
+ * index is less than or equal to the pivot or if it crosses over the left hand
+ * size index. Then the algorithm swaps the two newly located values and moves
+ * the pivot back to the right hand side of the new array. Then quicksort is called
+ * twice on each partition of the array, leaving the middle value alone.
+ *
+ * @param left Left hand size index
+ * @param right Right hand size index
+ */
 void quicksort(int left, int right) {
    if(left >= right) {
     	return;
