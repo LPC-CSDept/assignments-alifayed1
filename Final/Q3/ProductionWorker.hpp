@@ -12,7 +12,7 @@ class ProductionWorker : public Employee {
         double hourlyWage;
     public:
         ProductionWorker();
-        ProductionWorker(int, double); 
+        ProductionWorker(string, int, string, int, double); 
         ~ProductionWorker();
 
         int getShift() const;
