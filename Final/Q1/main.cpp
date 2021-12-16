@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <ctime>
 #include "Course.cpp"
 
 using namespace std;
@@ -8,6 +9,7 @@ void fillCourseArray(Course[], int);
 int binarySearch(Course[], int, int);
 
 int main() {
+    srand(time(0));
     int size = 10;
     Course courses[size];
 
@@ -19,10 +21,10 @@ int main() {
     }
     cout << endl;
 
-    int target = 103;
+    int target = rand() % (109 + 1 - 100) + 100;
     cout << "Locating " << target << "...\n";
     int index = binarySearch(courses, size, target);
-    cout << "Found " << target << " at: " << index << endl;
+    cout << "Found " << target << " at index: " << index << " (" << courses[index].getName() << ")" << endl;
 
     return 0;
 }
@@ -39,6 +41,8 @@ void fillCourseArray(Course courses[], int size) {
     for(int i = 0; i < size; i++) {
         ifs >> courses[i];
     }
+
+    ifs.close();
 }
 
 int binarySearch(Course courses[], int size, int target) {
