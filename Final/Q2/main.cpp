@@ -8,7 +8,7 @@ using namespace std;
 void quicksort(Course[], int, int);
 
 int main() {
-
+    
     return 0;
 }
 
@@ -32,5 +32,10 @@ void quicksort(Course courses[], int left, int right) {
     	}
     	swap(x, y);
     }
+
+    swap(right, y);
+
+    quicksort(courses, left, y - 1);
+    quicksort(courses, y + 1, right);
 }
 
