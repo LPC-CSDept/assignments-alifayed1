@@ -20,6 +20,13 @@ class ProductionWorker : public Employee {
 
         void setShift(int);
         void setHourlyWage(double);
+
+        bool operator<(ProductionWorker& rightObj) const { return this->hourlyWage < rightObj.hourlyWage; }
+        bool operator<=(ProductionWorker& rightObj) const { return this->hourlyWage <= rightObj.hourlyWage; }
+        bool operator>(ProductionWorker& rightObj) const { return this->hourlyWage > rightObj.hourlyWage; }
+        bool operator>=(ProductionWorker& rightObj) const { return this->hourlyWage >= rightObj.hourlyWage; }
+        bool operator==(ProductionWorker& rightObj) const { return this->hourlyWage == rightObj.hourlyWage; }
+        bool operator!=(ProductionWorker& rightObj) const { return this->hourlyWage != rightObj.hourlyWage; }
 };
 
 #endif
