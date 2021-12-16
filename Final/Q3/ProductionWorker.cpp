@@ -1,4 +1,5 @@
 #include "ProductionWorker.hpp"
+#include <iostream>
 
 using namespace std;
 
@@ -43,11 +44,14 @@ void ProductionWorker::setHourlyWage(double newHourlyWage) {
 ProductionWorker findHighestPaidEmployee(ProductionWorker workers[], int size) {
     ProductionWorker max = workers[0];
 
+    cout << "Overloaded (>) operator output\n\n";
     for(int i = 0; i < size; i++) {
         if(workers[i] > max) {
+            cout << workers[i].getName() << " > " << max.getName() << endl;
             max = workers[i];
         }
     }
+    cout << "\n";
     return max;
 }
 
