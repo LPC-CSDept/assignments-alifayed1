@@ -24,8 +24,9 @@ class ProductionWorker : public Employee {
 
         friend ProductionWorker findHighestPaidEmployee(ProductionWorker[], int);
         friend istream& operator >> (istream& is, ProductionWorker& course);
-        friend ostream& operator << (ostream& os, ProductionWorker& course);
+        friend ostream& operator << (ostream& os, ProductionWorker& course);   
 
+        // Overloaded all relational operators to compare with wage
         bool operator<(ProductionWorker& rightObj) const { return this->hourlyWage < rightObj.hourlyWage; }
         bool operator<=(ProductionWorker& rightObj) const { return this->hourlyWage <= rightObj.hourlyWage; }
         bool operator>(ProductionWorker& rightObj) const { return this->hourlyWage > rightObj.hourlyWage; }

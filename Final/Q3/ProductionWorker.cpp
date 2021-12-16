@@ -41,6 +41,17 @@ void ProductionWorker::setHourlyWage(double newHourlyWage) {
     hourlyWage = newHourlyWage;
 }
 
+/**
+ * Finds the highest paid employee
+ *
+ * The algorithm starts off with the first worker as a base and saved in a variable (max). 
+ * Then iterates through the array one by one and compares the wage of the current index
+ * with (max) and updates (max) if the current wage is higher
+ *
+ * @param workers ProductionWorker array
+ * @param size Size of the array
+ * @return ProductionWorker with the highest wage.
+ */
 ProductionWorker findHighestPaidEmployee(ProductionWorker workers[], int size) {
     ProductionWorker max = workers[0];
 
