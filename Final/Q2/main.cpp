@@ -5,17 +5,32 @@
 
 using namespace std;
 
-void quicksort(int, int);
+void quicksort(Course[], int, int);
 
 int main() {
 
     return 0;
 }
 
-void quicksort(int left, int right) {
+void quicksort(Course courses[], int left, int right) {
     if(left >= right) {
         return;
     }
+
     int pivot = left + (right - left) / 2; // Safe way to calculate mid to prevent overflow
+    swap(pivot, right);
+
+    int x = left - 1;
+    int y = right;
+
+    while(x < y) {
+    	while(courses[x] < courses[right]){
+    		x++;
+    	}
+    	while(courses[y] > courses[right] && x < y) {
+    		y--;
+    	}
+    	swap(x, y);
+    }
 }
 
