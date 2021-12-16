@@ -7,7 +7,8 @@ using namespace std;
 
 void fillCourseArray(Course[], int);
 void sortByID(Course[], int);
-int binarySearch(Course[], int, int);
+int binarySearchIterative(Course[], int, int);
+int binarySearchRecursive(Course[], int, int, int);
 
 int main() {
     srand(time(0));
@@ -25,7 +26,7 @@ int main() {
 
     int target = rand() % (109 + 1 - 100) + 100;
     cout << "Locating " << target << "...\n";
-    int index = binarySearch(courses, size, target);
+    int index = binarySearchIterative(courses, size, target);
     cout << "Found " << target << " at index: " << index << " (" << courses[index].getName() << ")" << endl;
 
     return 0;
@@ -57,7 +58,7 @@ void sortByID(Course courses[], int size) {
     }
 }
 
-int binarySearch(Course courses[], int size, int target) {
+int binarySearchIterative(Course courses[], int size, int target) {
     int first, last, mid;
     first = 0;
     last = size-1;
@@ -73,4 +74,8 @@ int binarySearch(Course courses[], int size, int target) {
         }
     }
     return -1;
+}
+
+int binarySearchRecursive(Course courses[], int low, int high, int target) {
+    
 }
