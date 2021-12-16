@@ -26,6 +26,13 @@ class Course {
 
         friend istream& operator >> (istream& is, Course& course);
         friend ostream& operator << (ostream& os, Course& course);
+
+        bool operator<(Course& rightObj) const { return this->id < rightObj.id; }
+        bool operator<=(Course& rightObj) const { return this->id <= rightObj.id; }
+        bool operator>(Course& rightObj) const { return this->id > rightObj.id; }
+        bool operator>=(Course& rightObj) const { return this->id >= rightObj.id; }
+        bool operator==(Course& rightObj) const { return this->id == rightObj.id; }
+        bool operator!=(Course& rightObj) const { return this->id != rightObj.id; }
 };
 
 #endif
