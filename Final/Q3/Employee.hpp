@@ -6,7 +6,7 @@
 using namespace std;
 
 class Employee {
-    private:
+    protected:
         string name;
         int number;
         string hireDate;
