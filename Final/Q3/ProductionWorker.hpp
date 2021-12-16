@@ -2,6 +2,7 @@
 #define PRODUCTIONWORKER_H
 
 #include "Employee.hpp"
+#include <fstream>
 #include <string>
 
 using namespace std;
