@@ -16,6 +16,12 @@ int main() {
     srand(time(0));
 
     Numbers<int> n(100, 10);
+    Numbers<int> n2(110, 10);
+
     printNumbers(n);
+    printNumbers(n2);
+
+    cout << "Is n > n2? (1 = true. 0 = false): " << (n > n2) << endl;
+
     return 0;
 }
