@@ -46,3 +46,24 @@ template<typename T>
 int Numbers<T>::getNumObjects(){
     return numOfObjects;
 }
+
+template<typename T>
+bool Numbers<T>operator>(Numbers<T>& rightObj) const {
+    int sumOne = 0;
+    int sumTwo = 0;
+
+    for(int i = 0; i < this->numOfObjects-1; i++) {
+        sumOne += this->values[i];
+    }
+        for(int i = 0; i < rightObj.numOfObjects-1; i++) {
+        sumTwo += rightObj.values[i];
+    }
+}
+
+void printNumbers(Numbers<T> nums) {
+    cout << "Nums\n";
+    for(int i = 0; i < nums.getNumOfObjects()-1; i++) {
+        cout << nums.getValues[i] << endl;
+    }
+    cout << "\n";
+}
