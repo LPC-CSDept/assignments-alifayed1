@@ -30,9 +30,9 @@ int Student::getID() const {
     return this->id;
 }
 
-// int* Student::getScores() const {
-//     return scores;
-// }
+int* Student::getScores() {
+    return scores;
+}
 
 void Student::setName(string name) {
     this->name = name;

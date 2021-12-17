@@ -18,7 +18,7 @@ class Student{
 
         string getName() const;
         int getID() const;
-        // int* getScores() const;
+        int* getScores();
 
         void setName(string);
         void setID(int);
