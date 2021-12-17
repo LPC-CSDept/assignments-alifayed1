@@ -22,7 +22,7 @@ int main() {
     int target;
     cout << "Enter an ID to search: ";
     cin >> target;
-    
+
     cout << "Locating student with ID: " << target << endl;
     int index = searchStudent(students, target);
     if(index != -1) {
@@ -62,6 +62,19 @@ void sortStudents(Student students[]) {
     }
 }
 
+/**
+ * Iterative binary search
+ *
+ * After the array is sorted, the function locates the middle value and checks if
+ * it is the target, if not, it splits the array in half based on whether or not
+ * the current value is greater or smaller than the target. The loop continues
+ * until a value is found. If no value is found at the end of the loop, 
+ * -1 is returned.
+ *
+ * @param students Students array
+ * @param target Student ID
+ * @return Index of target.
+ */
 int searchStudent(Student students[], int target) {
     int first, last, mid, size;
     size = 10;

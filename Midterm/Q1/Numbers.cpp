@@ -49,6 +49,10 @@ int Numbers<T>::getNumOfObjects() {
     return numOfObjects;
 }
 
+/**
+ * First finds the sum of the two objects then determines whether
+ * the first is greater than the second.
+ */
 template<typename T>
 bool Numbers<T>::operator>(Numbers<T>& rightObj) const {
     int sumOne = 0;
