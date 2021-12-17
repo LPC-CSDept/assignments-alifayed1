@@ -3,6 +3,7 @@
 template<typename T>
 Numbers<T>::Numbers() {
     id = 0;
+    numOfObjects+=1;
 }
 
 template<typename T>
@@ -12,6 +13,7 @@ Numbers<T>::Numbers(int setID, int randomElems) {
         int val = rand() % 100;
         values.push_back(val);
     }
+    numOfObjects+=1;
 }
 
 template<typename T>
@@ -43,12 +45,12 @@ template<typename T>
 int Numbers<T>::numOfObjects = 0;
 
 template<typename T>
-int Numbers<T>::getNumObjects(){
+int Numbers<T>::getNumOfObjects() {
     return numOfObjects;
 }
 
 template<typename T>
-bool Numbers<T>operator>(Numbers<T>& rightObj) const {
+bool Numbers<T>::operator>(Numbers<T>& rightObj) const {
     int sumOne = 0;
     int sumTwo = 0;
 
@@ -59,12 +61,4 @@ bool Numbers<T>operator>(Numbers<T>& rightObj) const {
         sumTwo += rightObj.values[i];
     }
     return (sumOne > sumTwo);
-}
-
-void printNumbers(Numbers<T> nums) {
-    cout << "Nums\n";
-    for(int i = 0; i < nums.getNumOfObjects()-1; i++) {
-        cout << nums.getValues[i] << endl;
-    }
-    cout << "\n";
 }
