@@ -20,11 +20,11 @@ class Numbers {
         vector<T> getValues() const;
 
         void setID(int);
-        void setValues(vector<T>)
+        void setValues(vector<T>);
 
-        static int getNumOfObjects() const;
+        static int getNumOfObjects();
 
-        friend printNumbers(Numbers<T> n);
+        friend void printNumbers(Numbers<T>);
         bool operator>(Numbers<T>& rightObj) const;
 };
 
