@@ -19,7 +19,10 @@ int main() {
 
     sortStudents(students);
 
-    int target = 50493;
+    int target;
+    cout << "Enter an ID to search: ";
+    cin >> target;
+    
     cout << "Locating student with ID: " << target << endl;
     int index = searchStudent(students, target);
     if(index != -1) {
