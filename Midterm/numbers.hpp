@@ -24,8 +24,8 @@ class Numbers {
 
         static int getNumOfObjects() const;
 
-        friend printNumbers(Numbers n);
-        bool operator>(Numbers& rightObj) const;
+        friend printNumbers(Numbers<T> n);
+        bool operator>(Numbers<T>& rightObj) const;
 };
 
 #endif
