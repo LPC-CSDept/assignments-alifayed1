@@ -13,10 +13,18 @@ class Numbers {
         static int numOfObjects;
     public:
         Numbers();
-        Numbers(int, vector<T>, int);
+        Numbers(int, int);
         ~Numbers();
 
+        int getID() const;
+        vector<T> getValues() const;
+
+        void setID(int);
+        void setValues(vector<T>)
+
         static int getNumOfObjects() const;
+
+        friend printNumbers(Numbers n);
         bool operator>(Numbers& rightObj) const;
 };
 
