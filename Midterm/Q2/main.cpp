@@ -19,7 +19,7 @@ int main() {
 
     sortStudents(students);
 
-    int target = 84092;
+    int target = 50493;
     cout << "Locating student with ID: " << target << endl;
     int index = searchStudent(students, target);
     if(index != -1) {
@@ -52,7 +52,7 @@ void sortStudents(Student students[]) {
     int size = 10;
     for (int i = 0; i < size; i++){
         for (int j = 0; j < size; j++){
-            if (students[i].getID() < students[j].getID()){
+            if (students[i].getID() > students[j].getID()){
                 swap(students[j], students[i]);
             }
         }
@@ -69,7 +69,7 @@ int searchStudent(Student students[], int target) {
         mid = last + ((first - last) / 2); // Safe way to calculate mid to prevent overflow
         if(students[mid].getID() == target) {
             return mid;
-        } else if(students[mid].getID() > target) {
+        } else if(students[mid].getID() < target) {
             last = mid - 1;
         } else {
             first = mid + 1;
