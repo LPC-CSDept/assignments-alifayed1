@@ -20,3 +20,28 @@ Student::~Student() {
     
 }
 
+string Student::getName() const {
+    return this->name;
+}
+
+int Student::getID() const {
+    return this->id;
+}
+
+int* Student::getScores() const {
+    return this->scores;
+}
+
+void Student::setName(string name) {
+    this->name = name;
+}
+
+void Student::setID(int id) {
+    this->id = id;
+}
+
+void Student::setScores(int scores[]) {
+    for(int i = 0; i < 3; i++) {
+        this->scores[i] = scores[i];
+    }
+}
