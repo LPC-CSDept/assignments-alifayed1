@@ -12,7 +12,7 @@ class Student{
         int* scores;
     public:
         Student();
-        Student(string, int, int[]);
+        Student(string, int, int*);
         ~Student();
 
         string getName() const;
@@ -21,7 +21,7 @@ class Student{
 
         void setName(string);
         void setID(int);
-        void setScores(int[]);
+        void setScores(int*);
 };
 
 #endif

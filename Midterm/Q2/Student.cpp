@@ -8,7 +8,7 @@ Student::Student() {
     scores[2] = 0;
 }
 
-Student::Student(string name, int id, int scores[]) {
+Student::Student(string name, int id, int* scores) {
     this->name = name;
     this->id = id;
     for(int i = 0; i < 3; i++) {
@@ -40,7 +40,7 @@ void Student::setID(int id) {
     this->id = id;
 }
 
-void Student::setScores(int scores[]) {
+void Student::setScores(int* scores) {
     for(int i = 0; i < 3; i++) {
         this->scores[i] = scores[i];
     }
