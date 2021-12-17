@@ -58,6 +58,7 @@ bool Numbers<T>operator>(Numbers<T>& rightObj) const {
         for(int i = 0; i < rightObj.numOfObjects-1; i++) {
         sumTwo += rightObj.values[i];
     }
+    return (sumOne > sumTwo);
 }
 
 void printNumbers(Numbers<T> nums) {
